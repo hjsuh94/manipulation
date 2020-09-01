@@ -41,11 +41,11 @@ def setup_manipulation():
     except ImportError:
         if platform.system() == "Darwin":
             get_ipython().system(
-                u"if [ ! -d '/opt/manipulation' ]; then git clone https://github.com/hjsuh94/manipulation.git /opt/manipulation && /opt/manipulation/scripts/setup/mac/install_prereqs; fi"  # noqa
+                u"if [ ! -d '/opt/manipulation' ]; then git clone https://github.com/hjsuh94/manipulation.git /opt/manipulation && /opt/manipulation/scripts/setup/mac/install_prereqs.sh; fi"  # noqa
             )
         elif platform.linux_distribution() == ("Ubuntu", "18.04", "bionic"):
             get_ipython().system(
-                u"if [ ! -d '/opt/manipulation' ]; then git clone https://github.com/hjsuh94/manipulation.git /opt/manipulation && /opt/manipulation/scripts/setup/ubuntu/18.04/install_prereqs; fi"  # noqa
+                u"if [ ! -d '/opt/manipulation' ]; then git clone https://github.com/hjsuh94/manipulation.git /opt/manipulation && /opt/manipulation/scripts/setup/ubuntu/18.04/install_prereqs.sh; fi"  # noqa
             )
         else:
             assert False, "Unsupported platform"
